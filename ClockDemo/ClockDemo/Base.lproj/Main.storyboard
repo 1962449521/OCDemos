@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RBB-zq-2ts">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="z9r-fc-J41">
+            <objects>
+                <viewController id="06h-kI-NXR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B2n-lD-dLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="BfW-4l-ISg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xxw-m5-P0C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZB-0E-zuT">
+                                <rect key="frame" x="115" y="93" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="i7S-0O-X8U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SJu-R1-cUB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtE-Qi-2E6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.5" y="255.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HH:mm:ss" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPZ-lN-9TJ">
+                                <rect key="frame" x="20" y="322" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="kSt-vK-ERk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-Ob-Xdt">
+                                <rect key="frame" x="195" y="323" width="122" height="29"/>
+                                <segments>
+                                    <segment title="设置"/>
+                                    <segment title="暂停"/>
+                                    <segment title="运行"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="d5h-4U-pfY"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入设置时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29N-G4-RBC">
+                                <rect key="frame" x="20" y="298" width="78" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NR-jF-1l8" customClass="HSClockView">
+                                <rect key="frame" x="87" y="84" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2qN-ij-VM5"/>
+                                    <constraint firstAttribute="width" constant="200" id="gOb-Uf-9cl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XTQ-Ob-Xdt" firstAttribute="leading" secondItem="ZPZ-lN-9TJ" secondAttribute="trailing" constant="25" id="4qL-Vx-cK4"/>
+                            <constraint firstItem="ZPZ-lN-9TJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="BoI-bh-nly"/>
+                            <constraint firstItem="XTQ-Ob-Xdt" firstAttribute="top" secondItem="6NR-jF-1l8" secondAttribute="bottom" constant="39" id="Ubg-19-A9g"/>
+                            <constraint firstItem="XTQ-Ob-Xdt" firstAttribute="centerY" secondItem="ZPZ-lN-9TJ" secondAttribute="centerY" id="a5A-gT-aao"/>
+                            <constraint firstItem="ZPZ-lN-9TJ" firstAttribute="leading" secondItem="29N-G4-RBC" secondAttribute="leading" id="cz2-67-x0F"/>
+                            <constraint firstItem="6NR-jF-1l8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="e87-22-QVB"/>
+                            <constraint firstItem="ZPZ-lN-9TJ" firstAttribute="top" secondItem="29N-G4-RBC" secondAttribute="bottom" constant="8" id="jQX-VM-LcH"/>
+                            <constraint firstItem="6NR-jF-1l8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xNS-Xu-5S3"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="clockView" destination="6NR-jF-1l8" id="1WP-3I-Vcc"/>
+                        <outlet property="txfTime" destination="ZPZ-lN-9TJ" id="Tg3-89-PDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.5" y="241.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VBK-rh-ior">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RBB-zq-2ts" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Bq-x2-ggm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="06h-kI-NXR" kind="relationship" relationship="rootViewController" id="Zki-cP-geA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8E-M2-tUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="255"/>
+        </scene>
+    </scenes>
+</document>
