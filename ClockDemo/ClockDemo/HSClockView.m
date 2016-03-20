@@ -225,10 +225,10 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
 #pragma mark 私有方法
 
 - (void) p_handleTimeSource {
-    [self p_setTime:self.time];
     [self willChangeValueForKey:@"time"];
-    _time += 1;
+    [self p_setTime:self.time];
     [self didChangeValueForKey:@"time"];
+    _time += 1;
 }
 
 - (void) p_setTime:(NSTimeInterval)time {
