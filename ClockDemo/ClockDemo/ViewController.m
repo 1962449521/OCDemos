@@ -29,7 +29,7 @@
     // 设置钟表背景
     NSString *path = [[NSBundle mainBundle] pathForResource:@"bg_dail@2x" ofType:@".png"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
-    [_clockView setDialBackGroundImage:image];
+    [_clockView setDialBackgroundImage:image];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -10,7 +10,7 @@
 #import "HSTimer.h"
 
 /**
- *  时针、分针、秒针的弧度角（z轴向外）
+ *  时针、分针、秒针的弧度角（左手二维坐标系下，与X轴正方向的夹角。从屏幕外看，顺时针为增长方向）
  */
 typedef struct HSClockHandRadian {
     double hourRadian;
@@ -191,7 +191,7 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
 
 #pragma mark - 设置图片或数值并显示
 
-- (void) setDialBackGroundImage:(UIImage *) image {
+- (void) setDialBackgroundImage:(UIImage *) image {
     CGImageRef imageRef = image.CGImage;
     self.layer.contents = (__bridge id )(imageRef);
     self.layer.contentsScale = [UIScreen mainScreen].scale;

@@ -29,7 +29,7 @@
  *
  *  @param image 表盘背景图，UIImage对象
  */
-- (void) setDialBackGroundImage:(UIImage *) image;
+- (void) setDialBackgroundImage:(UIImage *) image;
 
 @end
 
