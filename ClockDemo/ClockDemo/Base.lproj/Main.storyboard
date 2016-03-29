@@ -55,11 +55,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-Ob-Xdt">
-                                <rect key="frame" x="195" y="323" width="122" height="29"/>
+                                <rect key="frame" x="195" y="323" width="163" height="29"/>
                                 <segments>
                                     <segment title="设置"/>
                                     <segment title="暂停"/>
                                     <segment title="运行"/>
+                                    <segment title="校准"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentControlClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="d5h-4U-pfY"/>
@@ -68,7 +69,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入设置时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29N-G4-RBC">
                                 <rect key="frame" x="20" y="298" width="78" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NR-jF-1l8" customClass="HSClockView">

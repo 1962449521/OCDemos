@@ -69,6 +69,11 @@
         case 2://运行
             [self.clockView work];
             break;
+            
+        case 3://校准
+            [self.clockView calibrate];
+            sender.selectedSegmentIndex = 2;
+            break;
 
         default:
             break;

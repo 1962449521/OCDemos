@@ -46,6 +46,7 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
 }
 
 
+#define HSTIMEVARIABLEUNSET (-MAXFLOAT) // 用于标识变量的UNSET状态
 
 @interface HSClockView()
 
@@ -90,6 +91,10 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
     CAShapeLayer *_minuteLayer;
     CAShapeLayer *_secondLayer;
     NSTimer *_timer;
+    // 用于校准
+    NSTimeInterval _processTimeofLastSet; // 最后一次设置时的进程时间
+    NSTimeInterval _inputTimeofLastSet;   // 最后一次设置输入的显示时间
+    
 }
 
 #pragma mark -  lifecycle
@@ -109,6 +114,9 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
 }
 
 - (void) p_initClockView {
+    // 标识unset状态
+    _inputTimeofLastSet = _processTimeofLastSet = HSTIMEVARIABLEUNSET;
+    
     CGRect dialRect = self.bounds;
     
     // 绘制时针
@@ -207,18 +215,31 @@ HSClockHandRadian HSTimeFromDate(NSDate *date) {
 
 - (void) work {
     if(!self.isWorking) {
-        [_timer invalidate];
-        _timer = [HSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(p_handleTimeSource) userInfo:nil repeats:YES];
+        if(![_timer isValid]) {
+            _timer = [HSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(p_handleTimeSource) userInfo:nil repeats:YES];
+        } else {
+            [_timer setFireDate:[NSDate date]];
+        }
         self.working = YES;
     }
 }
 
 - (void) pause {
-    if([_timer isValid]) {
-        [_timer invalidate];
+    if(![_timer isValid]) {
+        _timer = [HSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(p_handleTimeSource) userInfo:nil repeats:YES];
     }
-    _timer = nil;
+    [_timer setFireDate:[NSDate distantFuture]];
     self.working = NO;
+}
+
+- (void) calibrate {
+    NSTimeInterval realTime;
+    if (_processTimeofLastSet == HSTIMEVARIABLEUNSET || _inputTimeofLastSet == HSTIMEVARIABLEUNSET) {
+        realTime = [[NSDate date] timeIntervalSince1970];
+    } else {
+       realTime  = [[NSProcessInfo processInfo] systemUptime] + _processTimeofLastSet - _inputTimeofLastSet;
+    }
+    [self setTime:realTime];
 }
 
 

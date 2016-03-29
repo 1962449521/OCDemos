@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClockDemo/ViewController.m"
-            timestampString = "480063322.13324"
+            timestampString = "480924758.112791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClockDemo/HSClockView.m"
-            timestampString = "480068585.280373"
+            timestampString = "480924707.311157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "+automaticallyNotifiesObserversForKey:"
             landmarkType = "5">
          </BreakpointContent>

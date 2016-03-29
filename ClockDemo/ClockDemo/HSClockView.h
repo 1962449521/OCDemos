@@ -15,6 +15,7 @@
  *  要有setter/getter, KVO-compliance
  */
 @property (nonatomic, assign) NSTimeInterval time;
+
 /**
  *  暂停时钟运行
  */
@@ -23,6 +24,11 @@
  *  继续或者开始时钟运行
  */
 - (void) work;
+/**
+ *  根据最近一次时间设置，未设置过则使用系统时间
+ *  校准设备延迟
+ */
+- (void) calibrate;
 
 /**
  *  设置表盘背景图
